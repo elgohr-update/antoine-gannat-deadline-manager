@@ -1,0 +1,47 @@
+<html>
+
+<head>
+    <title>Days until</title>
+    <!-- bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css"
+        integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+        <!-- font awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU"
+        crossorigin="anonymous">
+
+
+    <script src="/assets/js/storage.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <h1 class="col-lg-6 offset-lg-3 text-center">Current events</h1>
+        <div id="eventsContainer">
+        </div>
+        <div>
+            <form class="col-lg-4 offset-lg-4">
+                <h4 class="col-lg-8 offset-lg-2">Add a new event</h4>
+                <div class="form-inline col-lg-12">
+                    <label for="newEventName" class="col-lg-4"><b>Name :</b></label>
+                    <input type="text" class="form-control col-lg-8" id="newEventName" />
+                </div>
+                <div class="form-inline col-lg-12">
+                    <label for="newEventBegin" class="col-lg-4"><b>From :</b></label>
+                    <input type="date" class="form-control col-lg-8" id="newEventBegin" />
+                </div>
+                <div class="form-inline col-lg-12">
+                    <label for="newEventEnd" class="col-lg-4"><b>To :</b></label>
+                    <input type="date" class="form-control col-lg-8" id="newEventEnd" />
+                </div>
+                <br />
+                <input type="button" class="btn btn-primary col-lg-4 offset-lg-4" onclick="addNewEvent()" value="Add" />
+            </form>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+    <script src="/assets/js/main.js"></script>
+</body>
+
+</html>
