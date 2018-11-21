@@ -23,7 +23,7 @@ function displayEvents() {
         progressBar.attr('aria-valuenow', timeDifference).css('width', timeDifference + "%");
         progressBar.attr('aria-valuemin', 0);
         progressBar.attr('aria-valuemax', 100);
-        progressBar.append(timeDifference.toFixed(2) + "%");
+        progressBar.append(timeDifference.toFixed(3) + "%");
 
 
         var progressBarDelete = $("<button>").addClass("btn btn-danger col-lg-1").appendTo(container);
