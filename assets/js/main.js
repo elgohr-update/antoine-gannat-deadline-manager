@@ -7,7 +7,9 @@ function displayEvents() {
     var timeNow = Math.floor(new Date().getTime() / 1000);
     var eventsContainer = document.getElementById("eventsContainer")
     // clear the container
-    eventsContainer.innerHTML = "";
+    while (eventsContainer.firstChild) {
+        eventsContainer.removeChild(eventsContainer.firstChild);
+    }
     // get the events from the storage
     var events = storage.getEvents();
 
