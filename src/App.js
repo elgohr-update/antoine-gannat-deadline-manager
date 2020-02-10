@@ -1,40 +1,34 @@
 import React, {Component} from 'react';
 import AddEvent from './components/AddEvent';
+import DisplayEvents from './components/DisplayEvents';
 import './assets/css/app.css';
 
 export default class App extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      events: []
-    }
-    if (localStorage.getItem("event-manager-events")){
-      this.state.events = localStorage.getItem("event-manager-events")
+  constructor(){
+    super();
+    this.state ={
+      events: localStorage.getItem('event-manager-events') ? JSON.parse(localStorage.getItem('event-manager-events')) : []
     }
   }
 
-  displayEvents() {
-      return (
-        <div>
-          {this.state.events.map((event) => {
-            return (
-              <div key={event.id}>
-                <p>{event.name}</p>
-              </div>
-              )
-            }
-          )}
-        </div>
-      )
+  onEventAdd(newEvent){
+    // Get the current events
+    let events = this.state.events;
+    // Add the new event
+    events.push(newEvent);
+    // update the state
+    this.setState({events: events});
+    // Update the localstorage
+    localStorage.setItem('event-manager-events', JSON.stringify(events));
   }
 
   render() {
     return (
       <main className="app">
         <h1>Event Manager!</h1>
-        {this.displayEvents()}
+        <DisplayEvents events={this.state.events}/>
         <hr/>
-        <AddEvent/>
+        <AddEvent onAdd={this.onEventAdd.bind(this)}/>
       </main>
     )
   }
