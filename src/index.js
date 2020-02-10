@@ -1,10 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './assets/css/index.css';
 import App from './App';
-import * as serviceWorker from './serviceWorker';
+import ServiceWorker from './components/ServiceWorker';
+import './assets/css/index.css';
 
-ReactDOM.render(<App />, document.getElementById('root'));
-
-// register the service worker
-serviceWorker.register();
+ReactDOM.render(
+  <main>
+    <App />
+    <ServiceWorker/>
+  </main>, document.getElementById('root'));

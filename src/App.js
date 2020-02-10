@@ -31,7 +31,7 @@ export default class App extends Component {
   render() {
     return (
       <main className="app">
-        <h1>Event Manager</h1>
+        <h1>Event Manager!</h1>
         {this.displayEvents()}
         <hr/>
         <AddEvent/>
