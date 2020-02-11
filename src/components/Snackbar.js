@@ -14,7 +14,7 @@ export default class Snackbar extends Component {
       <div className="snackbar">
         <div className={ this.props.visible ? "snackbar-content": "hide"}>
           <p>{this.props.message}</p>
-          <button className="success" onClick={this.props.onAccept}>{this.props.btnText}</button>
+          <button className="action-btn" onClick={this.props.onAccept}>{this.props.btnText}</button>
           <button className="float-right" onClick={this.props.onClose}>Close</button>
         </div>
       </div>

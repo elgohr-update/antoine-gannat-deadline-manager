@@ -25,7 +25,7 @@ export default class App extends Component {
   render() {
     return (
       <main className="app">
-        <h1>Event Manager!</h1>
+        <h1>Event Manager</h1>
         <DisplayEvents events={this.state.events}/>
         <hr/>
         <AddEvent onAdd={this.onEventAdd.bind(this)}/>

@@ -57,7 +57,7 @@ export default class ServiceWorker extends Component {
         <Snackbar
           visible={this.state.visible}
           btnText="Refresh"
-          message="New content available !"
+          message="New version available !"
           onAccept={this.getNewContent.bind(this)}
           onClose={() => this.setState({visible:false})}/>
       </div>
