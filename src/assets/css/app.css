@@ -1,0 +1,10 @@
+.app {
+  background-color: #282c34;
+  min-height: 100vh;
+  color:white;
+}
+
+.app h1{
+  text-align: center;
+  margin:0;
+}
