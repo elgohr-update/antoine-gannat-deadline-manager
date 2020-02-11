@@ -1,4 +1,4 @@
-# Event Manager
+# Deadline Manager
 
 A PWA in ReactJS, used to manage events deadline.
 

@@ -1,0 +1,13 @@
+.events-container{
+  padding:1em;
+  width:auto;
+  overflow-x: auto;
+}
+
+.events-container .event-name{
+  margin:0 1em 0 1em;
+}
+
+.events-container .event{
+  margin:1em;
+}
