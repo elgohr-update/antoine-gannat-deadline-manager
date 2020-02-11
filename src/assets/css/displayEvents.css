@@ -1,13 +1,25 @@
 .events-container{
   padding:1em;
-  width:auto;
-  overflow-x: auto;
+  width:100%;
 }
 
 .events-container .event-name{
   margin:0 1em 0 1em;
+  position: absolute;
+  z-index:2;
+  left:0;
+  width:100px;
 }
 
 .events-container .event{
   margin:1em;
+  position: relative;
+}
+
+.events-container .event-progress-bar{
+  margin-left:100px;
+  padding:10px;
+  position: relative;
+  z-index:1;
+  overflow-x: auto;
 }
