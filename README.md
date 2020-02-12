@@ -1,5 +1,7 @@
 # Deadline Manager
 
+![Deploy to Github Pages](https://github.com/antoine-gannat/deadline-manager/workflows/Deploy%20to%20Github%20Pages/badge.svg)
+
 A PWA in ReactJS, used to manage events deadline.
 
 ## Usage
