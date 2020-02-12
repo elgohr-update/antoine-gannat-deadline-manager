@@ -1,0 +1,10 @@
+# Node module folder
+/node_modules
+
+# Build folder
+/build
+
+# Github files
+/.github
+
+README.md

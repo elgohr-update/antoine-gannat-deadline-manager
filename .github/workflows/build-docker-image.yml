@@ -1,0 +1,19 @@
+name: Build docker image
+
+on: [push]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v1
+      - name: Build the Docker image
+        run: docker build . -t docker.pkg.github.com/antoine-gannat/deadline-manager/deadline-manager:latest
+      - name: Publish to Registry
+        uses: elgohr/Publish-Docker-Github-Action@master
+        with:
+          name: antoine-gannat/deadline-manager/deadline-manager:latest
+          username: ${{ secrets.docker_username }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+          registry: docker.pkg.github.com

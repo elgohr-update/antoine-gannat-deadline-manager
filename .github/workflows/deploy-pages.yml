@@ -1,8 +1,8 @@
 name: Deploy to Github Pages
 
 on:
-  push:	
-    branches:	
+  push:
+    branches:
       - master
 
 jobs:
@@ -16,12 +16,15 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
-    - name: Use Node.js ${{ matrix.node-version }}
+    - name: Setup NodeJs
       uses: actions/setup-node@v1
       with:
         node-version: ${{ matrix.node-version }}
     - run: npm install
-    - run: npm run build
+    - name: Build react
+      run: npm run build
+      env:
+        PUBLIC_URL: https://antoine-gannat.github.io/deadline-manager/
     - name: Deploy
       uses: JamesIves/github-pages-deploy-action@releases/v3
       with:
