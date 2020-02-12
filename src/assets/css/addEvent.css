@@ -1,4 +1,5 @@
 .add-event-form{
   width:100%;
+  max-width:400px;
   padding:2em;
 }

@@ -11,10 +11,12 @@ import "react-datepicker/dist/react-datepicker.css";
 export default class AddEvent extends Component {
   constructor(props) {
     super(props);
-    let now = new Date()
-    now.setHours(0, 0, 0, 0);
+    // Get todays date and set it to midnight
+    this.todaysDate  = new Date()
+    this.todaysDate.setHours(0, 0, 0, 0);
+
     this.state = {
-      startDate: now,
+      startDate: this.todaysDate,
       endDate: null,
       name: ""
     }
@@ -36,8 +38,15 @@ export default class AddEvent extends Component {
       });
       return;
     }
-    console.log(this.state.startDate)
-    console.log(this.state.endDate)
+    // reset the fields
+    this.setState({
+      startDate: this.todaysDate,
+      endDate: null,
+      name: ""
+    });
+    // reset the input field
+    document.getElementById('input-event-name').value = "";
+
     this.props.onAdd({
       name: this.state.name,
       startDate: new Date(this.state.startDate).getTime(),
