@@ -16,10 +16,43 @@
   position: relative;
 }
 
-.events-container .event-progress-bar{
-  margin-left:100px;
+.events-container .progress-container{
   padding:10px;
   position: relative;
   z-index:1;
   overflow-x: auto;
+  overflow-y: hidden;
+}
+
+.events-container .progress-container:hover{
+  cursor: none;
+}
+
+.progress-container .progress{
+  margin:10px 0 10px 0;
+  height:15px;
+}
+
+.events-container .events-info-panel{
+  padding:10px;
+  line-height: 15px;
+}
+
+.events-info-panel div{
+  margin:10px 0 10px 0;
+
+}
+
+.vertical-cursor .bar{
+  position: absolute;
+  height:100%;
+  width:3px;
+  background: red;
+}
+
+.vertical-cursor .date{
+  position: absolute;
+  padding-left:1em;
+  background: rgba(100, 100, 100, 0.7);
+  width:110px;
 }

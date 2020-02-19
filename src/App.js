@@ -7,8 +7,25 @@ export default class App extends Component {
   constructor() {
     super();
     this.state = {
-      events: localStorage.getItem('event-manager-events') ? JSON.parse(localStorage.getItem('event-manager-events')) : []
+      events: this.loadEvents()
     }
+  }
+
+  loadEvents(){
+    let events = []
+    if (localStorage.getItem('event-manager-events')){
+      events = JSON.parse(localStorage.getItem('event-manager-events'))
+    }
+    events.sort((a, b) => {
+      if (a.startDate < b.startDate){
+        return (-1);
+      }
+      else if (a.startDate > b.startDate){
+        return (1);
+      }
+      return (0);
+    })
+    return (events);
   }
 
   // remove an event
@@ -29,10 +46,10 @@ export default class App extends Component {
     let events = this.state.events;
     // Add the new event
     events.push(newEvent);
-    // update the state
-    this.setState({ events: events });
     // Update the localstorage
     localStorage.setItem('event-manager-events', JSON.stringify(events));
+    // reload events
+    this.setState({events: this.loadEvents()})
   }
 
   render() {
